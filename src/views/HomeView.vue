@@ -1,5 +1,12 @@
+import WelcomeItem from '@/components/WelcomeItem.vue'; import WelcomeItem from '@/components/WelcomeItem.vue'; import
+WelcomeItem from '@/components/WelcomeItem.vue'; import WelcomeItem from '@/components/WelcomeItem.vue';
+
 <template>
     <div>
-        <h1>HomeView</h1>
+        <h1>Template Vue3 With ts and nice configs</h1>
+        <WelcomeItem />
     </div>
 </template>
+<script setup lang="ts">
+import WelcomeItem from '@/components/WelcomeItem.vue';
+</script>

@@ -1,11 +1,7 @@
-<script setup lang="ts">
-import {RouterLink, RouterView} from 'vue-router';
-</script>
-
 <template>
     <header>
         <div class="startClass">
-            <nav>
+            <nav class="p-2">
                 <RouterLink to="/">Home</RouterLink>
                 <RouterLink to="/about">About</RouterLink>
             </nav>
@@ -16,6 +12,9 @@ import {RouterLink, RouterView} from 'vue-router';
     </div>
 </template>
 
+<script setup lang="ts">
+import {RouterLink, RouterView} from 'vue-router';
+</script>
 <style scoped>
 .startClass {
     color: brown;
