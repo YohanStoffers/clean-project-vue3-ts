@@ -6,6 +6,10 @@ vue3 template with typescript and good proper configs (eslint, prettier, vscode 
 
 ## How to Install
 
+## before installing
+
+make sure you have node v16.17.16^ or higher. its highly recommended to use vs studio code. Try to accept recommended plugin that vs studio code wil recommend.
+
 ### step 1: run all these commands in this order
 
 ```
@@ -16,4 +20,4 @@ npm run build
 npm run dev
 ```
 
-have fun ;)
+Have fun ;^)
