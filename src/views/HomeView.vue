@@ -1,6 +1,3 @@
-import WelcomeItem from '@/components/WelcomeItem.vue'; import WelcomeItem from '@/components/WelcomeItem.vue'; import
-WelcomeItem from '@/components/WelcomeItem.vue'; import WelcomeItem from '@/components/WelcomeItem.vue';
-
 <template>
     <div>
         <h1>Template Vue3 With ts and nice configs</h1>
