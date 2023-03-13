@@ -4,7 +4,7 @@
 
         <div class="m-4">
             <strong>From API template:</strong>
-            {{ templateData?.body }}
+            {{ templateData.body }}
         </div>
         <div class="m-4">
             <strong>From API template custom data:</strong>
@@ -17,15 +17,15 @@
 <script setup lang="ts">
 import WelcomeItem from '@/components/WelcomeItem.vue';
 
-import {getApiTemplateData, getApiTemplateDataCustomUrlAndKey} from '../api';
+import {getApiTemplateData, getApiTemplateDataCustomUrl} from '../api';
 // need to move this
-let templateData;
-let customData;
+const templateData = await getApiTemplateData();
+const customData = await getApiTemplateDataCustomUrl('https://jsonplaceholder.typicode.com/posts/1');
 
-try {
-    templateData = await getApiTemplateData();
-    customData = await getApiTemplateDataCustomUrlAndKey('https://jsonplaceholder.typicode.com/posts/1', 'title');
-} catch (error) {
-    console.error(error);
-}
+// try {
+//     templateData = await getApiTemplateData();
+//     customData = await getApiTemplateDataCustomUrlAndKey('https://jsonplaceholder.typicode.com/posts/1', 'title');
+// } catch (error) {
+//     console.error(error);
+// }
 </script>
