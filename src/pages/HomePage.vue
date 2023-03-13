@@ -4,7 +4,7 @@
 
         <div class="m-4">
             <strong>From API template:</strong>
-            {{ getTemplateData.body }}
+            {{ templateData?.body }}
         </div>
         <div class="m-4">
             <strong>From API template custom data:</strong>
@@ -19,6 +19,13 @@ import WelcomeItem from '@/components/WelcomeItem.vue';
 
 import {getApiTemplateData, getApiTemplateDataCustomUrlAndKey} from '../api';
 
-const getTemplateData = await getApiTemplateData();
-const customData = await getApiTemplateDataCustomUrlAndKey('https://jsonplaceholder.typicode.com/posts/1', 'title');
+let templateData;
+let customData;
+
+try {
+    templateData = await getApiTemplateData();
+    customData = await getApiTemplateDataCustomUrlAndKey('https://jsonplaceholder.typicode.com/posts/1', 'title');
+} catch (error) {
+    console.error(error);
+}
 </script>

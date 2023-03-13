@@ -1,10 +1,10 @@
 import {templateCustomDataCall, templateDataCall} from './template';
 // types: can be moved to other file if needed
 interface TemplateData {
-    body: string;
-    id: number;
-    title: string;
-    userId: number;
+    body?: string;
+    id?: number;
+    title?: string;
+    userId?: number;
 }
 
 // Getting data methodes
