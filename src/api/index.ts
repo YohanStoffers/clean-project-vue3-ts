@@ -3,9 +3,10 @@ import {templateCustomDataCall, templateDataCall} from './template';
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type ApiData = Promise<Record<string, any> | void>;
 
-export const tryCatch = (apiRequest: ApiData) => {
+// catch any api errors
+export const tryCatch = async (apiRequest: ApiData) => {
     try {
-        const request = apiRequest;
+        const request = await apiRequest;
 
         return request;
     } catch (error) {

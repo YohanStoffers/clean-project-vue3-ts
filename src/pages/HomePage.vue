@@ -20,7 +20,7 @@ import WelcomeItem from '@/components/WelcomeItem.vue';
 import {getApiTemplateData, getApiTemplateDataCustomUrl} from '../api';
 // need to move this
 const templateData = await getApiTemplateData();
-const customData = await getApiTemplateDataCustomUrl('https://jsonplaceholder.typicode.com/posts/1');
+const customData = await getApiTemplateDataCustomUrl('https://jsonplaceholder.typicode.com/posts/1a');
 
 // try {
 //     templateData = await getApiTemplateData();
