@@ -20,4 +20,8 @@ npm run build
 npm run dev
 ```
 
+## Now with Axios
+
+Can do api request to any backend now with axios you will need to config the files yourself
+
 Have fun ;^)
