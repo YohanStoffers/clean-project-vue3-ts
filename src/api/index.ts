@@ -7,11 +7,22 @@ interface TemplateData {
     userId?: number;
 }
 
-// Getting data methodes
-export const getApiTemplateData = async (): Promise<TemplateData> => {
-    const {data} = await templateDataCall();
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const tryCatch = async (request: any | void) => {
+    try {
+        await request;
+    } catch (error) {
+        // eslint-disable-next-line no-console
+        console.log(error);
+    }
+};
 
-    return data;
+// Getting data methodes
+export const getApiTemplateData = (): Promise<TemplateData | void> => {
+    const apiData = tryCatch(templateDataCall());
+    if (!apiData) return;
+
+    return apiData.data;
 };
 
 export const getApiTemplateDataCustomUrlAndKey = async (url: string, key: string): Promise<TemplateData> => {
