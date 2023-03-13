@@ -9,17 +9,14 @@
         </div>
     </header>
     <div>
-        <div class="m-4">
-            <strong>From API template:</strong>
-            {{ getTemplateData.body }}
-        </div>
-        <RouterView />
+        <Suspense>
+            <RouterView />
+        </Suspense>
     </div>
 </template>
 
 <script setup lang="ts">
 import {RouterLink, RouterView} from 'vue-router';
-import {getTemplateData} from './api';
 </script>
 <style scoped>
 .startClass {
