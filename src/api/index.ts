@@ -15,13 +15,15 @@ export const tryCatch = (apiRequest: ApiData) => {
 };
 
 // Getting data methodes
+
+// Get from fixed api
 export const getApiTemplateData = async (): ApiData => {
     const apiData = await tryCatch(templateDataCall());
     if (!apiData) return;
 
     return apiData.data;
 };
-
+// Get from set api
 export const getApiTemplateDataCustomUrl = async (url: string): ApiData => {
     const apiData = await tryCatch(templateCustomDataCall(url));
     if (!apiData) return;
