@@ -4,11 +4,11 @@
 
         <div class="m-4">
             <strong>From API template:</strong>
-            {{ templateData.body }}
+            {{ templateData?.body }}
         </div>
         <div class="m-4">
             <strong>From API template custom data:</strong>
-            {{ customData }}
+            {{ customData?.title }}
         </div>
 
         <WelcomeItem />
