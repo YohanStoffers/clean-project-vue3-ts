@@ -18,7 +18,7 @@
 import WelcomeItem from '@/components/WelcomeItem.vue';
 
 import {getApiTemplateData, getApiTemplateDataCustomUrlAndKey} from '../api';
-
+// need to move this
 let templateData;
 let customData;
 
