@@ -1,21 +1,33 @@
 import {templateCustomDataCall, templateDataCall} from './template';
 // types: can be moved to other file if needed
-interface TemplateData {
-    body: string;
-    id: number;
-    title: string;
-    userId: number;
-}
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type ApiData = Promise<Record<string, any> | void>;
 
-// Getting data methodes
-export const getApiTemplateData = async (): Promise<TemplateData> => {
-    const {data} = await templateDataCall();
+// catch any api errors
+export const tryCatch = async (apiRequest: ApiData) => {
+    try {
+        const request = await apiRequest;
 
-    return data;
+        return request;
+    } catch (error) {
+        // eslint-disable-next-line no-console
+        console.log(error);
+    }
 };
 
-export const getApiTemplateDataCustomUrlAndKey = async (url: string, key: string): Promise<TemplateData> => {
-    const {data} = await templateCustomDataCall(url);
+// Getting data methodes
 
-    return data[key];
+// Get from fixed api
+export const getApiTemplateData = async (): ApiData => {
+    const apiData = await tryCatch(templateDataCall());
+    if (!apiData) return;
+
+    return apiData.data;
+};
+// Get from set api
+export const getApiTemplateDataCustomUrl = async (url: string): ApiData => {
+    const apiData = await tryCatch(templateCustomDataCall(url));
+    if (!apiData) return;
+
+    return apiData.data;
 };

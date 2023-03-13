@@ -4,11 +4,11 @@
 
         <div class="m-4">
             <strong>From API template:</strong>
-            {{ getTemplateData.body }}
+            {{ templateData?.body }}
         </div>
         <div class="m-4">
             <strong>From API template custom data:</strong>
-            {{ customData }}
+            {{ customData?.title }}
         </div>
 
         <WelcomeItem />
@@ -17,8 +17,8 @@
 <script setup lang="ts">
 import WelcomeItem from '@/components/WelcomeItem.vue';
 
-import {getApiTemplateData, getApiTemplateDataCustomUrlAndKey} from '../api';
-
-const getTemplateData = await getApiTemplateData();
-const customData = await getApiTemplateDataCustomUrlAndKey('https://jsonplaceholder.typicode.com/posts/1', 'title');
+import {getApiTemplateData, getApiTemplateDataCustomUrl} from '../api';
+// need to move this
+const templateData = await getApiTemplateData();
+const customData = await getApiTemplateDataCustomUrl('https://jsonplaceholder.typicode.com/posts/1');
 </script>
